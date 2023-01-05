@@ -1,0 +1,23 @@
+{
+  "collMod": "product_category",
+  "validator": {
+    "$jsonSchema": {
+      "bsonType": "object",
+      "title": "Product Category Object Validation",
+      "required": [ "_id", "description"],
+      "properties": {
+        "_id":{
+          "bsonType":"string",
+          "description":"'ID' must be a exists"
+        },
+        "description": {
+          "bsonType": "string",
+          "description": "'Description' must be a string and its required"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "validationLevel": "strict",
+  "validationAction": "error"
+}

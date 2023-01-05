@@ -8,7 +8,12 @@ config={
 }
 
 class Connection:
-    def __new__(cls, database):
+    def __new__(cls, database=None):
+
         connection=MongoClient(**config)
+
+        if database is None:
+            return connection
+
         return connection[database]
 

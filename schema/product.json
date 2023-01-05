@@ -1,0 +1,76 @@
+{
+  "collMod": "product",
+  "validator": {
+    "$jsonSchema": {
+      "bsonType": "object",
+      "title": "Product Object Validation",
+      "required": [
+        "_id",
+        "title",
+        "description",
+        "price",
+        "discount_percentage",
+        "rating",
+        "stock",
+        "brand",
+        "category",
+        "thumbnail",
+        "images"
+      ],
+      "properties": {
+        "_id": {
+          "bsonType": "string",
+          "description": "'ID' must be a exists"
+        },
+        "title": {
+          "bsonType": "string",
+          "description": "'Title' must be a string and its required"
+        },
+        "description": {
+          "bsonType": "string",
+          "description": "'Description' must be a string and its required"
+        },
+        "price": {
+          "bsonType": "double",
+          "description": "'Price' must be a number and its required"
+        },
+        "discount_percentage": {
+          "bsonType": "double",
+          "minimum":0.00,
+          "maximum":100.00,
+          "description": "'Discount Percentage' must be a number and its required"
+        },
+        "rating": {
+          "bsonType": "double",
+          "minimum":0.00,
+          "maximum":5.00,
+          "description": "'Rating' must be a number and its required"
+        },
+        "stock": {
+          "bsonType": "int",
+          "minimum":0,
+          "description": "'Stock' must be a number and its required"
+        },
+        "brand": {
+          "bsonType": "string",
+          "description": "'Brand' must be a string and its required"
+        },
+        "category": {
+          "bsonType": "string",
+          "description": "'Category' must be a string and its required"
+        },
+        "thumbnail": {
+          "bsonType": "string",
+          "description": "'Thumbnail' must be a string and its required"
+        },
+        "images": {
+          "bsonType": "array",
+          "description": "'Image' must be exists"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "validationLevel": "strict",
+  "validationAction": "error"
+}
